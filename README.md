@@ -63,7 +63,7 @@ export function App() {
       <button>Switch to english</button>
       <button>Switch to french</button>
       <button>Switch to spanish</button>
-      <h1>{translate("title", locale)}</h1>
+      <h1>{translate("title")}</h1>
     </div>
   );
 }
