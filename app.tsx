@@ -30,7 +30,7 @@ export function App() {
       <button onClick={onEnglishSwitchButtonClick}>Switch to english</button>
       <button onClick={onFrenchSwitchButtonClick}>Passer en français</button>
       <button onClick={onSpanishSwitchButtonClick}>Cambiar al Español</button>
-      <h1>{translate("title", locale)}</h1>
+      <h1>{translate("title")}</h1>
     </div>
   );
 }
