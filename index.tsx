@@ -15,6 +15,48 @@ import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useMemo
  */
 export function createTranslations<Locale extends string>(initialLocale: Locale) {
   /**
+   * Get and set the current locale used by the client.
+   * @example
+   * ```typescript
+   * export function App() {
+   *   const { locale, setLocale } = useLocale();
+   *
+   *   const switchToEnglish = useCallback(() => {
+   *     setLocale("en");
+   *   }, []);
+   *
+   *   const switchToFrench = useCallback(() => {
+   *     setLocale("fr");
+   *   }, []);
+   *
+   *   const { translate } = useTranslations({
+   *     title: {
+   *       fr: "Bonjour",
+   *       en: "Hello",
+   *       es: "Hola"
+   *     }
+   *   });
+   *
+   *   return (
+   *     <div>
+   *       <button onClick={switchToEnglish}>English</button>
+   *       <button onClick={switchToFrench}>French</button>
+   *       <h1>{translate("title", locale)}</h1>
+   *     </div>
+   *   );
+   * }
+   * ```
+   */
+  function useLocale(): { locale: Locale, setLocale: Dispatch<SetStateAction<Locale>> } {
+    const { locale, setLocale } = useContext(LocaleContext);
+
+    return {
+      locale,
+      setLocale
+    }
+  }
+
+  /**
    * Create a set of translation texts.
    * @example
    * ```typescript
@@ -108,48 +150,6 @@ export function createTranslations<Locale extends string>(initialLocale: Locale)
         {children}
       </LocaleContext.Provider>
     );
-  }
-
-  /**
-   * Get and set the current locale used by the client.
-   * @example
-   * ```typescript
-   * export function App() {
-   *   const { locale, setLocale } = useLocale();
-   *
-   *   const switchToEnglish = useCallback(() => {
-   *     setLocale("en");
-   *   }, []);
-   *
-   *   const switchToFrench = useCallback(() => {
-   *     setLocale("fr");
-   *   }, []);
-   *
-   *   const { translate } = useTranslations({
-   *     title: {
-   *       fr: "Bonjour",
-   *       en: "Hello",
-   *       es: "Hola"
-   *     }
-   *   });
-   *
-   *   return (
-   *     <div>
-   *       <button onClick={switchToEnglish}>English</button>
-   *       <button onClick={switchToFrench}>French</button>
-   *       <h1>{translate("title", locale)}</h1>
-   *     </div>
-   *   );
-   * }
-   * ```
-   */
-  function useLocale(): { locale: Locale, setLocale: Dispatch<SetStateAction<Locale>> } {
-    const { locale, setLocale } = useContext(LocaleContext);
-
-    return {
-      locale,
-      setLocale
-    }
   }
 
   return {
