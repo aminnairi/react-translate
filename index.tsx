@@ -93,7 +93,7 @@ export function createTranslations<Locale extends string>(initialLocale: Locale)
    * );
    * ```
    */
-  function LocaleProvider({ children }: { children: ReactNode }) {
+  function LocaleProvider({ children }: { children: ReactNode }): ReactNode {
     const [locale, setLocale] = useState<Locale>(initialLocale);
 
     const value = useMemo(() => {
@@ -143,7 +143,7 @@ export function createTranslations<Locale extends string>(initialLocale: Locale)
    * }
    * ```
    */
-  function useLocale() {
+  function useLocale(): { locale: Locale, setLocale: Dispatch<SetStateAction<Locale>> } {
     const { locale, setLocale } = useContext(LocaleContext);
 
     return {
