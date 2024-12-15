@@ -92,14 +92,16 @@ export function createTranslations<Locale extends string>(initialLocale: Locale)
    * ```
    */
   function useTranslations<Translations extends Record<string, Record<Locale, string>>>(translations: Translations) {
-    function translate<Key extends keyof Translations>(key: Key, language: Locale) {
+    const { locale } = useLocale();
+
+    function translate<Key extends keyof Translations>(key: Key) {
       const translation = translations[key];
 
       if (!translation) {
         return "";
       }
 
-      return translation[language];
+      return translation[locale];
     }
 
     return {
