@@ -10,15 +10,15 @@
     "dev": "vite"
   },
   "peerDependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   },
   "devDependencies": {
-    "@types/react": "^19.0.1",
-    "@types/react-dom": "^19.0.2"
+    "@types/react": "19.0.1",
+    "@types/react-dom": "19.0.2"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
-    "vite": "^6.0.3"
+    "@vitejs/plugin-react": "4.3.4",
+    "vite": "6.0.3"
   }
 }
