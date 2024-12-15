@@ -2,6 +2,7 @@
   "type": "module",
   "name": "@aminnairi/react-translate",
   "version": "1.0.0",
+  "license": "MIT",
   "description": "Type-safe translation for React",
   "files": [
     "index.tsx"
