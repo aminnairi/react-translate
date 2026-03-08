@@ -14,6 +14,21 @@ Type-safe translation for React
 - **⚛️ React-Native Integration**: Built on top of React Context and Hooks for a seamless, idiomatic integration with your React applications.
 - **🪶 Zero Dependencies**: Lightweight and built directly on top of React's built-in APIs.
 
+## Prior Art
+
+While there are many excellent internationalization libraries in the React ecosystem, `@aminnairi/react-translate` takes a different approach by prioritizing **zero-dependency, native TypeScript type-safety** without the need for code generation or complex runtime string parsing.
+
+Here is how it compares to some of the most popular alternatives:
+
+- **[react-i18next](https://react.i18next.com/) / [i18next](https://www.i18next.com/)**: The industry standard. It is extremely feature-rich (async loading, pluralization, formatting) but comes with a larger bundle size. Achieving full type-safety for translation keys and interpolation arguments usually requires complex configuration or external CLI tools to parse JSON files into TypeScript types. Furthermore, it parses interpolation strings at runtime (e.g., `"Hello {{name}}"`) rather than using native TypeScript functions.
+- **[react-intl](https://formatjs.io/docs/getting-started/installation/) (FormatJS)**: A powerful library built on standard `Intl` APIs, excelling at complex date, number, and plural formatting. However, it relies heavily on the ICU MessageFormat syntax, which can be verbose, and like `react-i18next`, strict type-safety is not trivial out of the box without extra tooling.
+- **[typesafe-i18n](https://github.com/ivanhofer/typesafe-i18n)**: Shares the goal of strong type-safety. However, it requires running a background process or generator to compile TypeScript types from its custom format, introducing an additional build step to your workflow. `@aminnairi/react-translate` relies purely on TypeScript's inference.
+- **[next-intl](https://next-intl-docs.vercel.app/)**: An excellent choice if you are using Next.js, especially with the App Router and React Server Components. However, it is deeply coupled with Next.js paradigms and relies on ICU message formats, whereas `@aminnairi/react-translate` is framework-agnostic (works with standard React, React Native, Vite, etc.) and uses plain TypeScript functions.
+
+If you need advanced features like asynchronous translation loading, complex pluralization rules out of the box, or if your translators prefer working directly with JSON files instead of TypeScript code, libraries like `react-i18next` or `react-intl` might be a better fit.
+
+However, if you want a **lightweight, zero-dependency, and instantly type-safe** solution where translations live as plain TypeScript code, `@aminnairi/react-translate` provides a much simpler and strictly typed developer experience.
+
 ## Requirements
 
 - [Node](https://nodejs.org)
