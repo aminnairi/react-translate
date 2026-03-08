@@ -48,7 +48,7 @@ Create a `translate.ts` file to set up your locales and generate the components 
 
 ```typescript
 // translate.ts
-import { createTranslations } from "@aminnairi/react-translate";
+import { createTranslations, createLocalStorageAdapter } from "@aminnairi/react-translate";
 
 export const {
   LocaleProvider,
@@ -60,7 +60,8 @@ export const {
   locales: [
     "en",
     "fr"
-  ]
+  ],
+  storage: createLocalStorageAdapter("locale")
 });
 ```
 
@@ -161,6 +162,7 @@ Initializes the translations for your app and returns the provider, hooks, and h
 - **Arguments**: 
   - `options.initialLocale`: The locale to use by default on initialization.
   - `options.locales`: An array of all possible locales in your application.
+  - `options.storage` (Optional): An object with `get` and `set` methods to persist the locale. You can use the built-in `createLocalStorageAdapter(key)` for standard web projects.
 - **Returns**:
   - `LocaleProvider`: A React component to wrap your application.
   - `useLocale`: A hook to get and update the current locale.
@@ -216,3 +218,5 @@ See the [Changelog](CHANGELOG.md) for a list of changes.
 ## License
 
 [MIT](LICENSE)
+
+
