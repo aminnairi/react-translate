@@ -5,7 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.0.0] - Unreleased
+## [2.1.0] - 2026-03-08
+
+### Added
+- Context isolation: Moved `createContext` inside the `createTranslations` factory to prevent global state pollution when using multiple instances.
+- Descriptive error messages when hooks are used outside of their corresponding `LocaleProvider`.
+- Static translations: Overloaded `defineTranslation` and `useTranslate` to seamlessly support plain objects.
+- Enhanced provider: Added `initialLocale` override directly to the `LocaleProvider` component prop.
+- Locale persistence: Added `createLocalStorageAdapter` helper and the optional `storage` option to automatically persist and restore the user's locale preference.
+- Added Prior Art and Roadmap sections to the `README.md` documentation.
+
+### Removed
+- Removed the development-only `console.log` from the `LocaleProvider`.
+
+## [2.0.0] - 2026-03-08
 
 ### Added
 - Type-safe translation factory (`createTranslations`).
