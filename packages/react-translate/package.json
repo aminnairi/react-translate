@@ -2,7 +2,7 @@
   "private": false,
   "type": "module",
   "name": "@aminnairi/react-translate",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Type-safe translation for React.js",
   "homepage": "https://github.com/aminnairi/react-translate#readme",
   "license": "MIT",
