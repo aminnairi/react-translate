@@ -6,6 +6,11 @@ const title = defineTranslation((emails: number) => ({
   fr: `Bonjour ! Vous avez ${emails} emails non-lus.`
 }));
 
+const paragraph = defineTranslation({
+  fr: "Bonjour",
+  en: "Hello"
+})
+
 export function App() {
   const { locale, setLocale } = useLocale();
 
@@ -20,6 +25,7 @@ export function App() {
   }, []);
 
   const translateTitle = useTranslate(title);
+  const translateParagraph = useTranslate(paragraph);
 
   return (
     <div>
@@ -27,6 +33,7 @@ export function App() {
       <button onClick={onEnglishSwitchButtonClick}>Switch to english</button>
       <button onClick={onFrenchSwitchButtonClick}>Passer en français</button>
       <h1>{translateTitle(456)}</h1>
+      <p>{translateParagraph()}</p>
     </div>
   );
 }
