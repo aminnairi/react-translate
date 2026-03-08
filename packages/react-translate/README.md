@@ -1,7 +1,8 @@
 # @aminnairi/react-translate
 
-[![npm version](https://img.shields.io/npm/v/@aminnairi/react-translate.svg)](https://www.npmjs.com/package/@aminnairi/react-translate)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../../LICENSE)
+[![npm version](https://badgen.net/npm/v/@aminnairi/react-translate)](https://www.npmjs.com/package/@aminnairi/react-translate)
+[![types](https://badgen.net/npm/types/@aminnairi/react-translate)](https://www.npmjs.com/package/@aminnairi/react-translate)
+[![license](https://badgen.net/npm/license/@aminnairi/react-translate)](../../LICENSE)
 
 Type-safe translation for React
 
